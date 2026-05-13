@@ -6,9 +6,9 @@ comments: true
 ## 本站信息
 
 ```yml
-- name: 拔剑Sketon
-  url: https://d-sketon.github.io/
-  desc: 东方人的日常
+- name: 闲云野鸥
+  url: https://cc-x-cloud.github.io/friend/
+  desc: 技术分享
   image: https://d-sketon.github.io/avatar/avatar.webp
 ```
 
