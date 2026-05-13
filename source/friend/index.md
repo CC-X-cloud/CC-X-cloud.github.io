@@ -9,7 +9,7 @@ comments: true
 - name: 闲云野鸥
   url: https://cc-x-cloud.github.io/friend/
   desc: 技术分享
-  image: https://d-sketon.github.io/avatar/avatar.webp
+  image: https://cc-x-cloud.github.io/avatar/avatar.webp
 ```
 
 ## 申请方法
