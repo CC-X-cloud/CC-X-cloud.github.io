@@ -8,7 +8,7 @@ subtitle: 技术分享
 description: 没事来点薯条
 keywords:
 author: 闲云野鸥
-language: zh-CN
+language: en
 timezone: Asia/Shang Dong
 
 # URL
@@ -102,5 +102,5 @@ theme: reimu
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
+  type:
 
