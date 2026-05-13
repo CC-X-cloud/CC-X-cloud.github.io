@@ -1,6 +1,8 @@
-title: Hello World
-date: 2013-12-24 17:49:32
-tags:
 ---
-
-Welcome to [Hexo](http://zespia.tw/hexo)! This is your very first post. Check [documentation](http://zespia.tw/hexo/docs) to learn how to use.
+title: Hello World
+date: 2026-05-13 16:20:00        # 推荐：年月日 时分秒
+# 或
+date: 2026-05-13                 # 只有日期也可以
+# 或
+date: 2026-05-13T16:20:00.000Z  # ISO 格式
+---
