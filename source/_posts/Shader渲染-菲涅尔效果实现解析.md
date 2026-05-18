@@ -1,7 +1,7 @@
 ---
 title: Shader渲染-菲涅尔效果实现解析
 date: 2026-05-18 10:16:27
-cover: https://example.com/cover.webp
+cover: https://raw.githubusercontent.com/CC-X-cloud/CC-X-cloud.github.io/refs/heads/main/source/_data/covers/FNE.webp
 tags:
   - Shader
 categories: 渲染
