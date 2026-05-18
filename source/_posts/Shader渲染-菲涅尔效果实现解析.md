@@ -36,94 +36,97 @@ $\hat{v}$ $\hat{n}​$同上
 这时候我们可以知道我们实现这些效果就需要计算慢反射，菲涅尔的反射部分，和环境光的影响。
 
 
-`Shader "Unlit/Fresnel"`
-`{`
-    `Properties`
-    `{`
-        `_Color("Color",Color) = (1,1,1,1)`
-        `_FresnelScale("FresnelScale",Range(0,1)) = 0.5`
-        `_Cubemap("ReflectionCubemap",Cube) = "_Skybox"{}`
-        `//这些是可控制项，分别是物体本身的颜色，物体的反射率，反射的天空盒`
-    `}`
-    `SubShader`
-    `{`
+{% codeblock [title] [lang:Shaderlap] [url] [link text] [additional options] %}
+Shader "Unlit/Fresnel"
+{
+    Properties
+    {
+        _Color("Color",Color) = (1,1,1,1)
+        _FresnelScale("FresnelScale",Range(0,1)) = 0.5
+        _Cubemap("ReflectionCubemap",Cube) = "_Skybox"{}
+        //这些是可控制项，分别是物体本身的颜色，物体的反射率，反射的天空盒
+    }
+    SubShader
+    {
         
-        `Pass`
-        `{`
-            `CGPROGRAM`
-            `#pragma vertex vert`
-            `#pragma fragment frag`
+        Pass
+        {
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
 
-            `//需要用到的库`
-            `#include "UnityCG.cginc"`
-            `#include "Lighting.cginc"`
-            `#include "AutoLight.cginc"`
+            //需要用到的库
+            #include "UnityCG.cginc"
+            #include "Lighting.cginc"
+            #include "AutoLight.cginc"
 
-            `float4 _Color;`
-            `float _FresnelScale;`
-            `samplerCUBE _Cubemap;`
+            float4 _Color;
+            float _FresnelScale;
+            samplerCUBE _Cubemap;
 
-            `//经由公式得知要计算菲涅尔效应我们应该得知道物体的法线`
-            `//世界空间下的观察角度和反射角（反射角用来采样）`
-            `struct appdata`
-            `{`
-                `float4 vertex : POSITION;`
-                `//用来接收物体的法线并传递给片元着色器`
-                `float3 normal : NORMAL;`
-            `};`
+            //经由公式得知要计算菲涅尔效应我们应该得知道物体的法线
+            //世界空间下的观察角度和反射角（反射角用来采样）
+            struct appdata
+            {
+                float4 vertex : POSITION;
+                //用来接收物体的法线并传递给片元着色器
+                float3 normal : NORMAL;
+            };
 
-            `struct v2f`
-            `{`
-                `//用来接受顶点着色器的信息并传递出去`
-                `float4 pos : SV_POSITION;`
-                `float3 worldnormal : TEXCOORD0;`
-                `float3 worldpos : TEXCOORD1;`
-                `float3 worldviewdir : TEXCOORD2;`
-                `float3 worldrefl : TEXCOORD3;`
-            `};`
+            struct v2f
+            {
+                //用来接受顶点着色器的信息并传递出去
+                float4 pos : SV_POSITION;
+                float3 worldnormal : TEXCOORD0;
+                float3 worldpos : TEXCOORD1;
+                float3 worldviewdir : TEXCOORD2;
+                float3 worldrefl : TEXCOORD3;
+            };
 
-            `v2f vert (appdata v)`
-            `{`
-                `v2f o;`
-                `o.pos = UnityObjectToClipPos(v.vertex);`
-                `o.worldnormal = UnityObjectToWorldNormal(v.normal);`
-                `o.worldpos = mul(unity_ObjectToWorld,v.vertex);`
-                `o.worldviewdir = UnityWorldSpaceViewDir(o.worldpos);`
-                `o.worldrefl = reflect(-o.worldviewdir,o.worldnormal);`
-                `//可以用来接收阴影信息`
-                `TRANSFER_SHADOW(o);`
+            v2f vert (appdata v)
+            {
+                v2f o;
+                o.pos = UnityObjectToClipPos(v.vertex);
+                o.worldnormal = UnityObjectToWorldNormal(v.normal);
+                o.worldpos = mul(unity_ObjectToWorld,v.vertex);
+                o.worldviewdir = UnityWorldSpaceViewDir(o.worldpos);
+                o.worldrefl = reflect(-o.worldviewdir,o.worldnormal);
+                //可以用来接收阴影信息
+                TRANSFER_SHADOW(o);
 
-                `return o;`
-            `}`
+                return o;
+            }
 
-            `fixed4 frag (v2f i) : SV_Target`
-            `{`
-                `fixed3 worldnormal = normalize(i.worldnormal);`
-                `fixed3 worldlightdir = normalize(UnityWorldSpaceLightDir(i.worldpos));`
-                `fixed3 worldviewdir = normalize(i.worldviewdir);`
+            fixed4 frag (v2f i) : SV_Target
+            {
+                fixed3 worldnormal = normalize(i.worldnormal);
+                fixed3 worldlightdir = normalize(UnityWorldSpaceLightDir(i.worldpos));
+                fixed3 worldviewdir = normalize(i.worldviewdir);
 
-                `//计算环境光照`
-                `fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.rgb;`
+                //计算环境光照
+                fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.rgb;
 
-                `//计算光照衰减值，平滑阴影`
-                `UNITY_LIGHT_ATTENUATION(atten,i,i.worldpos);`
+                //计算光照衰减值，平滑阴影
+                UNITY_LIGHT_ATTENUATION(atten,i,i.worldpos);
 
-                `//按反射角采样出来应该反射出天空盒那一块的像素`
-                `fixed3 reflection = texCUBE(_Cubemap,i.worldrefl).rgb;`
+                //按反射角采样出来应该反射出天空盒那一块的像素
+                fixed3 reflection = texCUBE(_Cubemap,i.worldrefl).rgb;
 
-                `fixed fresnel = _FresnelScale + (1-_FresnelScale)*pow(1-dot(worldviewdir,worldnormal),5);`
+                fixed fresnel = _FresnelScale + (1-_FresnelScale)*pow(1-dot(worldviewdir,worldnormal),5);
 
-                `fixed3 diffuse = _LightColor0.rgb + _Color.rgb * max(0,dot(worldnormal,worldlightdir));`
+                fixed3 diffuse = _LightColor0.rgb + _Color.rgb * max(0,dot(worldnormal,worldlightdir));
 
-                `//最终合并颜色并输出`
-                `fixed3 color = ambient + lerp(diffuse,reflection,saturate(fresnel))*atten;`
+                //最终合并颜色并输出
+                fixed3 color = ambient + lerp(diffuse,reflection,saturate(fresnel))*atten;
 
-                `return fixed4(color,1);`
-            `}`
-            `ENDCG`
-        `}`
-    `}`
-`}`
+                return fixed4(color,1);
+            }
+            ENDCG
+        }
+    }
+}
+{% endcodeblock %}
+
 
 ## 详细讲解部分
 `fixed3 color = ambient + lerp(diffuse,reflection,saturate(fresnel))*atten;`
