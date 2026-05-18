@@ -93,7 +93,9 @@ excerpt_link: Read More
 rss: atom.xml
 
 # Footer copyright
-copyright: # Inject code snippet right in the footer copyright
+copyright:
+  enable: true
+# Inject code snippet right in the footer copyright
 # Need help choosing? Please see...
 # https://creativecommons.org/choose/
 # https://choosealicense.com/
