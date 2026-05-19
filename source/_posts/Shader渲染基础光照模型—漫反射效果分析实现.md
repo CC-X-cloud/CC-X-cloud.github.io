@@ -4,7 +4,7 @@ date: 2026-05-19 19:16:19
 tags:
   - Shader
 categories: 渲染
-cover:https://raw.githubusercontent.com/CC-X-cloud/CC-X-cloud.github.io/refs/heads/main/source/_data/covers/MFS.webp
+cover: https://raw.githubusercontent.com/CC-X-cloud/CC-X-cloud.github.io/refs/heads/main/source/_data/covers/MFS.webp
 ---
 ## 什么是漫反射和辐照度（朗伯余弦定律）？
 漫反射描述了这样一个物理现象：一束笔直的光照沿着直线打在粗糙的物体上，物体表面表面会把光线向着四面八方反射，所以入射线虽然互相平行，由于各点的法线方向不一致，造成反射光线向不同的方向无规则地反射。
