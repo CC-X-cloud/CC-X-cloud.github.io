@@ -416,7 +416,7 @@ gitalk:
   enable: true
   clientID: Ov23liTOXSKeN7KpqhkF
   clientSecret: 501505a497f50f527566ad6c2e867f4fd6fc5b61
-  repo: "gittalkcommunity"
+  repo: "gittalkcommity"
   owner: "CC-X-cloud"
   admin: ["CC-X-cloud"]
   md5: false
