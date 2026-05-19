@@ -413,12 +413,12 @@ twikoo:
 
 # https://github.com/gitalk/gitalk/blob/master/readme-cn.md
 gitalk:
-  enable: false
-  clientID:
-  clientSecret:
-  repo:
-  owner:
-  admin:
+  enable: true
+  clientID: Ov23liTOXSKeN7KpqhkF
+  clientSecret: 501505a497f50f527566ad6c2e867f4fd6fc5b61
+  repo: "gittalkcommunity"
+  owner: "CC-X-cloud"
+  admin: ["CC-X-cloud"]
   md5: false
 
 # https://giscus.app/zh-CN
