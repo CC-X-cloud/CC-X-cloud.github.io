@@ -419,7 +419,7 @@ gitalk:
   repo: "gittalkcommity"
   owner: "CC-X-cloud"
   admin: ["CC-X-cloud"]
-  md5: false
+  md5: true
 
 # https://giscus.app/zh-CN
 giscus:
