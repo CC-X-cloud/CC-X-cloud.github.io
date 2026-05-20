@@ -4,7 +4,7 @@ date: 2026-05-20 17:46:30
 tags:
   - Shader
 categories: 渲染
-cover:https://raw.githubusercontent.com/CC-X-cloud/CC-X-cloud.github.io/refs/heads/main/source/_data/covers/GG.webp
+cover: https://raw.githubusercontent.com/CC-X-cloud/CC-X-cloud.github.io/refs/heads/main/source/_data/covers/GG.webp
 ---
 ## 开篇提示
 从这篇文章起，之后的所以shader编写将会转为HLSL语言，CG已经有点过时了。
