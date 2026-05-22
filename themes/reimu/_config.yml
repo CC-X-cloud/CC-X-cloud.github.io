@@ -104,7 +104,7 @@ copyright:
 #   All website licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></div>
 
 footer:
-  since: 2020 # 2020-current year
+  since: 2025 # 2020-current year
   powered: true
   count: true # show word count and reading time
   busuanzi: true
@@ -640,13 +640,13 @@ top:
 
 share:
   # - facebook
-  # - twitter
+  - twitter
   # - bluesky
   # - linkedin
   # - reddit
   # - weibo
-  # - qq
-  # - weixin
+  - qq
+  - weixin
 
 ########################################
 # Experimental features

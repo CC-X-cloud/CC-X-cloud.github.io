@@ -11,14 +11,10 @@
             "id": "3d7dce730547d41f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Shader渲染基础光照模型—高光光照模型.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Shader渲染基础光照模型—高光光照模型"
+              "title": "新标签页"
             }
           }
         ]
@@ -183,22 +179,24 @@
       "bases:新建数据库": false
     }
   },
-  "active": "3d7dce730547d41f",
+  "active": "e40d5b94b62d0b02",
   "lastOpenFiles": [
-    "Shader渲染基础光照模型—高光光照模型.md~",
-    "Shader渲染基础光照模型—高光光照模型/Pasted image 20260520203421.png",
-    "Shader渲染基础光照模型—高光光照模型/GG1.webp",
+    "Shader渲染—法线映射和视差映射.md~",
+    "Shader渲染—法线映射和视差映射/NP2.webp",
+    "Shader渲染—法线映射和视差映射/NP3.webp",
+    "Shader渲染—法线映射和视差映射/NP1.webp",
+    "Shader渲染—法线映射和视差映射/Pasted image 20260522111338.png",
+    "Shader渲染—法线映射和视差映射/Pasted image 20260522102943.png",
+    "Shader渲染—法线映射和视差映射.md",
     "Shader渲染基础光照模型—高光光照模型.md",
-    "Shader渲染基础光照模型—高光光照模型/GG3.webp",
-    "Shader渲染基础光照模型—高光光照模型/GG2.webp",
     "Shader渲染-菲涅尔效果实现解析.md",
     "Shader渲染基础光照模型—漫反射效果分析实现.md",
-    "Shader渲染基础光照模型—高光光照模型/Pasted image 20260520194742.png",
-    "Shader渲染基础光照模型—高光光照模型/Pasted image 20260520183449.png",
-    "Shader渲染基础光照模型—高光光照模型/Pasted image 20260520184430.png",
-    "Shader渲染基础光照模型—高光光照模型/Pasted image 20260520182220.png",
-    "Shader渲染基础光照模型—漫反射效果分析实现/Pasted image 20260519193348.png",
-    "Shader渲染基础光照模型—漫反射效果分析实现/Pasted image 20260519192206.png",
+    "Shader渲染—法线映射和视差映射/Pasted image 20260522190357.png",
+    "Shader渲染—法线映射和视差映射/Pasted image 20260522190252.png",
+    "Shader渲染—法线映射和视差映射/Pasted image 20260522110212.png",
+    "Pasted image 20260522110842.png",
+    "Shader渲染基础光照模型—高光光照模型.md~",
+    "Shader渲染基础光照模型—高光光照模型/Pasted image 20260520203421.png",
     "Shader渲染-菲涅尔效果实现解析.md~",
     "JM-1.md",
     "JM-1.md~",
