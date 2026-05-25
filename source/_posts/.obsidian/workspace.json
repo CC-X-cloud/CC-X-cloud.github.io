@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "视差映射优化—陡峭视差映射.md",
+                "file": "插值函数和陡峭插值映射.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "视差映射优化—陡峭视差映射"
+              "title": "插值函数和陡峭插值映射"
             }
           }
         ]
@@ -183,16 +183,20 @@
       "bases:新建数据库": false
     }
   },
-  "active": "3d7dce730547d41f",
+  "active": "e40d5b94b62d0b02",
   "lastOpenFiles": [
+    "插值函数和陡峭插值映射/CZ1.webp",
+    "插值函数和陡峭插值映射/CZ.webp",
+    "插值函数和陡峭插值映射/Pasted image 20260525200454.png",
+    "视差映射优化—陡峭视差映射.md",
+    "Shader渲染—法线映射和视差映射.md",
+    "插值函数和陡峭插值映射.md",
+    "Shader渲染-菲涅尔效果实现解析.md",
     "视差映射优化—陡峭视差映射.md~",
     "视差映射优化—陡峭视差映射/DQ2.webp",
     "视差映射优化—陡峭视差映射/DQ1.webp",
     "视差映射优化—陡峭视差映射/Pasted image 20260523215407.png",
     "视差映射优化—陡峭视差映射/Pasted image 20260523205621.png",
-    "Shader渲染-菲涅尔效果实现解析.md",
-    "Shader渲染—法线映射和视差映射.md",
-    "视差映射优化—陡峭视差映射.md",
     "Pasted image 20260523215407.png",
     "Pasted image 20260523215143.png",
     "Shader渲染基础光照模型—高光光照模型.md",
@@ -200,8 +204,6 @@
     "Pasted image 20260523205621.png",
     "视差映射优化—陡峭视差映射",
     "Shader渲染—法线映射和视差映射/Pasted image 20260522190357.png",
-    "Shader渲染—法线映射和视差映射/NP3.webp",
-    "Shader渲染—法线映射和视差映射/NP2.webp",
     "Shader渲染—法线映射和视差映射.md~",
     "Shader渲染基础光照模型—高光光照模型.md~",
     "Shader渲染-菲涅尔效果实现解析.md~",
