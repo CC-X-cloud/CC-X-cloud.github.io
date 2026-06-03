@@ -131,16 +131,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float rotationSpeed = 5f;
 
     private CharacterController characterController;
-    
+
+	//订阅事件
     private void OnEnable()
     {
         GameEventMgr.Instance.Subscribe<PlayerMoveEvent>(HandlePlayerMove);
-        GameEventMgr.Instance.Subscribe<PlayerJumpEvent>(PlayerJump);
     }
     private void OnDisable()
     {
         GameEventMgr.Instance.UnSubscribe<PlayerMoveEvent>(HandlePlayerMove);
-        GameEventMgr.Instance.UnSubscribe<PlayerJumpEvent>(PlayerJump);
     }
 
     void Start()
