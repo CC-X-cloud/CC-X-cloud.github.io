@@ -4,6 +4,7 @@ date: 2026-06-02 15:55:15
 tags:
   - Unity开发
 categories: 编程
+cover: https://raw.githubusercontent.com/CC-X-cloud/CC-X-cloud.github.io/refs/heads/main/source/_data/covers/GET.webp
 ---
 # 观察者模式
 **官方定义：**  
@@ -32,7 +33,176 @@ categories: 编程
 - **观察者模式**通常是基于对象间引用的直接回调，多为同步执行。如果某个观察者的处理逻辑耗时过长，可能会阻塞整个通知流程。
 - **事件总线**则将其升级为一种异步的事件路由机制。它不仅支持根据事件类型自动路由匹配，还能提供精细化的线程调度能力（例如决定在主线程还是后台线程处理事件），甚至支持跨进程、跨微服务的分布式通信（如 Spring Cloud Bus 结合 Kafka/RabbitMQ）。
 打个通俗的比方：**观察者模式**就像是老师在课堂上直接点名让几个课代表去办事情；而**事件总线系统**则是学校设立了一个专门的“校园广播站”，老师只需要对着麦克风喊话（发事件），谁需要听就自己去收听，彼此完全不需要认识对方。
+# Unity开发中的实现
+理解了上面的设计逻辑，我们现在看看落实在游戏开发中是怎么实现事件总线系统的。
+首先你要明白C#中委托和事件的工作机制的工作机制，事件总线的底层都依赖于 C# 的**多播委托（Multicast Delegate）**。
+事件总线运行逻辑
+就那玩家移动来说，传统写法中输入模块必须嵌入玩家移动模块，但是有了事件总线我们就可以讲这两个模块分离开来。
+事件中心有两部分分别是事件库（存储数据）和方法库（提供订阅，退订等方法），移动控制中调用事件中心获得数据，InputMgr也通过事件中心调用发布和触发方法，这样实现移动控制和输入的强解耦，当获得输入时，输入值可以传给事件库中类，通过构造函数传给类中的变量，然后通过事件中心的触发方法来调用订阅InputMgr类的方法。
+答疑：
+怎么实现触发方法方法来调用订阅InputMgr类的方法？
+这里用委托，可以理解为用了一个指针，通过委托直接指向订阅者的方法，获得输入时，事件总线的方法来指向移动控制，但是这些不重要，**重要的是用这种方法，原本强耦合的对象，可以被拆开，事件中心就相当于一个超级快递员，负责在不同的类中收集和传递数据，让这些类不用见面也可以通信。**
+![](GET.webp)
+## 代码实现
+这里将方法库和事件库分开来，并用上面移动的例子演示运用
+### 方法库
+{% codeblock [title] [lang:Shaderlap] [url] [link text] [additional options] %}
+	using System;
+	using System.Collections;
+	using System.Collections.Generic;
+	using UnityEngine;
+	
+	public class GameEventMgr : SingalBase<GameEventMgr>
+	{
+	    //核心存储结构：使用字典来管理所有的事件
+	    private readonly Dictionary<Type, Delegate> _listeners = new();
+		
+	    public void Subscribe<T>(Action<T> callback) where T:class
+	    {
+	        Type type = typeof(T);
+	        if(_listeners.ContainsKey(type))
+	        {
+	            _listeners[type] = Delegate.Combine(_listeners[type], callback);
+	        }
+	        else
+	        {
+	            _listeners.Add(type, callback);
+	        }
+	    }
+	    public void UnSubscribe<T>(Action<T> callback)where T:class
+	    {
+	        Type type = typeof(T);
+	        if(_listeners.ContainsKey(type))
+	        {
+	            _listeners[type] = Delegate.Remove(_listeners[type], callback);
+	            if(_listeners[type] == null)
+	            {
+	                _listeners.Remove(type);
+	            }
+	        }
+	    }   
+	    public void Trigger<T>(T eventData) where T:class
+	    {
+	        Type type = typeof(T);
+	        if(_listeners.ContainsKey(type))
+	        {
+	            var callback = _listeners[type] as Action<T>;
+	            callback?.Invoke(eventData);
+	        }
+	    }
+	}
+{% endcodeblock %}
+### 事件库
+{% codeblock [title] [lang:Shaderlap] [url] [link text] [additional options] %}
+	using System.Collections;
+	using System.Collections.Generic;
+	using UnityEngine;
+	
+	public class EventCenter : MonoBehaviour
+	{
+	
+	}
+	//用来接受传来的数据
+	public class PlayerMoveEvent
+	{
+	    public float mouseX;
+	    public float mouseY;
+	    public float horizontalInput;
+	    public float verticalInput;
+	    public float mouseSensitivity = 5f;
+	    public PlayerMoveEvent(float mouseX, float mouseY, float horizontalInput, float verticalInput, float mouseSensitivity)
+	    {
+	        this.mouseX = mouseX;
+	        this.mouseY = mouseY;
+	        this.horizontalInput = horizontalInput;
+	        this.verticalInput = verticalInput;
+	        this.mouseSensitivity = mouseSensitivity;
+	    }
+	}
+{% endcodeblock %}
+### 应用示例
+#### 订阅者
+{% codeblock [title] [lang:Shaderlap] [url] [link text] [additional options] %}
+public class PlayerMovement : MonoBehaviour
+{
+    [Header("MovementSpeed")]
+    [SerializeField] private float movementSpeed = 3f;
+    [Header("RotationSpeed")]
+    [SerializeField] private float rotationSpeed = 5f;
 
+    private CharacterController characterController;
+    
+    private void OnEnable()
+    {
+        GameEventMgr.Instance.Subscribe<PlayerMoveEvent>(HandlePlayerMove);
+        GameEventMgr.Instance.Subscribe<PlayerJumpEvent>(PlayerJump);
+    }
+    private void OnDisable()
+    {
+        GameEventMgr.Instance.UnSubscribe<PlayerMoveEvent>(HandlePlayerMove);
+        GameEventMgr.Instance.UnSubscribe<PlayerJumpEvent>(PlayerJump);
+    }
+
+    void Start()
+    {
+        //初始化
+        characterController = GetComponent<CharacterController>();
+    }
+
+    //角色移动等逻辑主要用CharacterController实现
+    public void HandlePlayerMove(PlayerMoveEvent eventData)
+    {
+        float rotation = eventData.mouseX * rotationSpeed * eventData.mouseSensitivity;
+        transform.Rotate(0f, rotation, 0f);
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            factor = Mathf.Lerp(factor, 2f, Time.deltaTime * 5f);
+        }
+        else if(Input.GetKey(KeyCode.LeftControl))
+        {
+            factor = Mathf.Lerp(factor, 0.5f, Time.deltaTime * 5f); ;
+        }
+        else
+        {
+            factor = 1f;
+        }
+        Vector3 moveVector = (transform.forward * eventData.verticalInput) + (transform.right * eventData.horizontalInput);
+        if (moveVector.magnitude > 1f) moveVector.Normalize();
+        characterController.Move(moveVector * movementSpeed * factor * Time.deltaTime);
+    }
+}
+{% endcodeblock %}
+#### 发布者
+{% codeblock [title] [lang:Shaderlap] [url] [link text] [additional options] %}
+	using System.Collections;
+	using System.Collections.Generic;
+	using UnityEngine;
+	
+	public class InputMgr : SingalBase<InputMgr>
+	{   
+	    private float mouseX;
+	    private float mouseY;
+	    private float horizontal;
+	    private float vertical;
+	    public float mouseSensitivity = 5f;
+	    private void Update()
+	    {
+	       mouseX = Input.GetAxis("Mouse X");
+	       mouseY = Input.GetAxis("Mouse Y");
+	       horizontal = Input.GetAxis("Horizontal");
+	       vertical = Input.GetAxis("Vertical");
+	    //得到变化并通知订阅者
+		GameEventMgr.Instance.Trigger(new PlayerMoveEvent(mouseX, mouseY,
+	                                         horizontal, vertical,
+	                                         mouseSensitivity));
+	    }
+	}
+{% endcodeblock %}
+
+## PS:
+- **委托（Delegate）**：本质上是一种类型安全的函数指针（引用类型），它定义了方法的签名（参数和返回值），允许将方法作为参数传递或动态调用1。
+- **事件（Event）**：本质上是委托的封装。它不能脱离委托独立存在，必须依赖委托来指定方法规
 
 ## 对比表格
 | 对比维度 | 传统观察者模式 (Observer) | 事件总线系统 (Event Bus) |
@@ -43,7 +213,6 @@ categories: 编程
 | 适用规模 | 同一进程内、轻量级局部状态联动    | 跨模块、跨线程、跨进程的大型复杂系统 |
 
 
-
-
-# 资料引用
+# 相关资料
 [观察者模式 - ep 2_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1PLJnzaEKB?spm_id_from=333.788.videopod.episodes&vd_source=94e0ab5c7f9607cfa2db45546924ff38&p=2)
+[微软官方# 探索 C# 中委托和事件的关系](https://learn.microsoft.com/zh-cn/training/modules/create-manage-events/5-explore-delegates-events-relationship-csharp)
