@@ -590,7 +590,7 @@ outdate:
 
 # Sponsor
 sponsor:
-  enable: false
+  enable: true
   tip:
     zh-CN: 请作者喝杯咖啡吧
     zh-TW: 請作者喝杯咖啡吧
@@ -602,10 +602,10 @@ sponsor:
     rotate: true
     mask: true # whether to use the images as a mask
   qr:
-    # - name: 支付宝
-    #   src: "/sponsor/alipay.jpg"
-    # - name: 微信
-    #   src: "/sponsor/wechat.png"
+     - name: 支付宝
+       src: "/Sponser/zfb.jpg"
+     - name: 微信
+       src: "/Sponser/wechat.jpg"
 
 # ICP 备案
 icp:
