@@ -49,15 +49,19 @@ relative_link: false
 future: true
 syntax_highlighter: highlight.js
 highlight:
+  auto_detect: true
   line_number: true
-  auto_detect: false
-  tab_replace: ''
+  line_threshold: 0
+  tab_replace: ""
+  exclude_languages:
+    - 
   wrap: true
   hljs: false
 prismjs:
-  preprocess: true
+  preprocess: false
   line_number: true
-  tab_replace: ''
+  line_threshold: 0
+  tab_replace: ""
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
