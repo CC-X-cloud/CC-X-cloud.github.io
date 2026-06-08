@@ -4,6 +4,7 @@ date: 2026-06-02 20:55:20
 tags:
   - Unity开发
 categories: 编程
+cover:  https://raw.githubusercontent.com/CC-X-cloud/CC-X-cloud.github.io/refs/heads/main/source/_data/covers/MoveFF2.webp
 ---
 # 要求（策划）
 **设计意图**
