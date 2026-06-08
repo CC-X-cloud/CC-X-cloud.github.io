@@ -7,7 +7,7 @@ comments: true
 
 ```yml
 - name: 闲云野鸥
-  url: https://cc-x-cloud.github.io/friend/
+  url: https://cc-x-cloud.github.io/
   desc: 技术分享
   image: https://cc-x-cloud.github.io/avatar/avatar.webp
 ```
