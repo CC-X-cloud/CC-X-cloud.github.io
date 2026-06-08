@@ -11,14 +11,10 @@
             "id": "3d7dce730547d41f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Shader渲染基础光照模型—高光光照模型.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Shader渲染基础光照模型—高光光照模型"
+              "title": "新标签页"
             }
           }
         ]
@@ -185,14 +181,20 @@
   },
   "active": "3d7dce730547d41f",
   "lastOpenFiles": [
-    "unity游戏开发-游戏角色控制.md",
+    "Unity开发—UI系统.md",
+    "Unity游戏开发-背包系统.md",
     "Unity游戏开发-事件总线.md",
+    "unity游戏开发-游戏角色控制.md",
     "Unity游戏开发—角色移动实战Character案例.md",
+    "Unity开发—UI系统",
     "Shader渲染基础光照模型—漫反射效果分析实现.md",
     "Shader渲染基础光照模型—高光光照模型.md",
     "JM-1.md",
-    "Shader渲染—法线映射和视差映射.md",
+    "插值函数和陡峭插值映射.md",
+    "视差映射优化—陡峭视差映射.md",
     "Shader渲染-菲涅尔效果实现解析.md",
+    "Unity游戏开发-背包系统",
+    "Shader渲染—法线映射和视差映射.md",
     "知识体系搭建（博客目录）.md",
     "Unity游戏开发-事件总线/Pasted image 20260603213920.png",
     "Unity游戏开发-事件总线/GET.webp",
@@ -200,8 +202,6 @@
     "Unity游戏开发-事件总线/Pasted image 20260603212435.png",
     "Shader渲染基础光照模型—漫反射效果分析实现/MFS1.webp",
     "Shader渲染基础光照模型—漫反射效果分析实现/MFS2.webp",
-    "插值函数和陡峭插值映射.md",
-    "视差映射优化—陡峭视差映射.md",
     "Unity游戏开发—角色移动实战Character案例",
     "Unity游戏开发-事件总线",
     "unity游戏开发-游戏角色控制.md~",
@@ -214,8 +214,6 @@
     "视差映射优化—陡峭视差映射",
     "Shader渲染—法线映射和视差映射.md~",
     "Shader渲染基础光照模型—高光光照模型.md~",
-    "Shader渲染-菲涅尔效果实现解析.md~",
-    "JM-1.md~",
     "Pasted.md"
   ]
 }
