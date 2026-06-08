@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "知识体系搭建（博客目录）.md",
+                "file": "Unity游戏开发—基础框架概述.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "知识体系搭建（博客目录）"
+              "title": "Unity游戏开发—基础框架概述"
             }
           }
         ]
@@ -185,12 +185,14 @@
   },
   "active": "3d7dce730547d41f",
   "lastOpenFiles": [
+    "Shader渲染基础光照模型—漫反射效果分析实现.md",
+    "Shader渲染—法线映射和视差映射.md",
+    "视差映射优化—陡峭视差映射.md",
+    "知识体系搭建（博客目录）.md",
     "Unity游戏开发—基础框架概述.md",
     "unity游戏开发-游戏角色控制.md",
     "插值函数和陡峭插值映射.md",
-    "Shader渲染基础光照模型—漫反射效果分析实现.md",
     "Shader渲染-菲涅尔效果实现解析.md",
-    "视差映射优化—陡峭视差映射.md",
     "Unity游戏开发—基础框架概述",
     "Unity开发—UI系统.md",
     "Unity游戏开发-背包系统.md",
@@ -200,8 +202,6 @@
     "Shader渲染基础光照模型—高光光照模型.md",
     "JM-1.md",
     "Unity游戏开发-背包系统",
-    "Shader渲染—法线映射和视差映射.md",
-    "知识体系搭建（博客目录）.md",
     "Unity游戏开发-事件总线/Pasted image 20260603213920.png",
     "Unity游戏开发-事件总线/GET.webp",
     "Unity游戏开发-事件总线/GET.png",

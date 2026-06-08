@@ -2,6 +2,9 @@
 title: Unity游戏开发—基础框架概述
 date: 2026-06-08 15:57:34
 tags:
+  - Unity开发
+cover: https://raw.githubusercontent.com/CC-X-cloud/CC-X-cloud.github.io/refs/heads/main/source/_data/covers/UNJKGS.webp
+categories: 编程
 ---
 # 游戏开发基础框架是什么？
 比较官方的叙述是：从底层设计思想来看，Unity 框架的本质是“**经验的抽象沉淀**”。它是一套基于 Unity 引擎特性设计的“**代码规范与功能模块集合**”。与直接编写业务代码不同，框架更侧重于“如何优雅地组织代码”，通过预设的结构和接口，解决项目开发中的共性问题（如模块耦合、功能复用、逻辑混乱等），从而让开发者将精力聚焦于核心玩法的实现。
