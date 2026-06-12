@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "知识体系搭建（博客目录）.md",
+                "file": "Unity开发-基础框架公共Mono类.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "知识体系搭建（博客目录）"
+              "title": "Unity开发-基础框架公共Mono类"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#if",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -185,21 +185,24 @@
   },
   "active": "3d7dce730547d41f",
   "lastOpenFiles": [
-    "Shader渲染-菲涅尔效果实现解析.md",
-    "Shader渲染—法线映射和视差映射.md",
-    "Shader渲染基础光照模型—高光光照模型.md",
-    "Unity游戏开发—基础框架概述.md",
-    "Unity游戏开发-基础设施单例基类.md",
-    "Unity游戏开发-基础设施单例基类.md~",
-    "Unity游戏开发-事件总线.md",
-    "Shader渲染基础光照模型—漫反射效果分析实现.md",
+    "Unity开发-基础框架公共Mono类.md~",
     "unity游戏开发-游戏角色控制.md",
-    "Unity游戏开发—角色移动实战Character案例.md",
-    "Unity游戏开发-基础设施单例基类",
-    "Unity游戏开发—角色移动实战Character案例.md~",
-    "视差映射优化—陡峭视差映射.md",
+    "Unity开发-基础框架公共Mono类.md",
+    "Unity游戏开发—基础框架概述.md",
+    "Unity游戏开发-事件总线.md",
+    "Unity游戏开发-基础设施单例基类.md",
     "知识体系搭建（博客目录）.md",
     "插值函数和陡峭插值映射.md",
+    "视差映射优化—陡峭视差映射.md",
+    "Shader渲染—法线映射和视差映射.md",
+    "Shader渲染基础光照模型—漫反射效果分析实现.md",
+    "Shader渲染基础光照模型—高光光照模型.md",
+    "Unity游戏开发—角色移动实战Character案例.md",
+    "Unity开发-基础框架公共Mono类",
+    "Shader渲染-菲涅尔效果实现解析.md",
+    "Unity游戏开发-基础设施单例基类.md~",
+    "Unity游戏开发-基础设施单例基类",
+    "Unity游戏开发—角色移动实战Character案例.md~",
     "Unity游戏开发—基础框架概述",
     "Unity开发—UI系统.md",
     "Unity游戏开发-背包系统.md",
@@ -215,7 +218,6 @@
     "Unity游戏开发—角色移动实战Character案例",
     "Unity游戏开发-事件总线",
     "unity游戏开发-游戏角色控制.md~",
-    "未命名.base",
     "插值函数和陡峭插值映射/CZ1.webp",
     "插值函数和陡峭插值映射/CZ.webp",
     "插值函数和陡峭插值映射/Pasted image 20260525200454.png",

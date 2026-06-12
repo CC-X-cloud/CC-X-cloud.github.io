@@ -30,7 +30,7 @@ cover: https://raw.githubusercontent.com/CC-X-cloud/CC-X-cloud.github.io/refs/he
 提供的代码可以经过删改来得到实际开发中需要的代码。
 ## 最基础式C#纯代码
 
-{% codeblock [lang:Shaderlap] %}
+{% codeblock [lang:CS] %}
 public class SingleCS
 {
     //懒汉式
@@ -57,7 +57,7 @@ public class SingleCS
 {% endcodeblock %}
 ## C#纯代码
 添加了多种优化方式可以根据实际要求修改
-{% codeblock [lang:Shaderlap] %}
+{% codeblock [lang:CS] %}
 using UnityEngine;
 /// <summary>
 /// 纯C#单例基类
