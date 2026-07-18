@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Unity开发-基础框架公共Mono类.md",
+                "file": "设计模式-命令模式.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Unity开发-基础框架公共Mono类"
+              "title": "设计模式-命令模式"
             }
           }
         ]
@@ -185,15 +185,25 @@
   },
   "active": "3d7dce730547d41f",
   "lastOpenFiles": [
-    "Shader渲染基础光照模型—漫反射效果分析实现.md",
+    "设计模式-命令模式.md~",
+    "设计模式-命令模式/MLMS2.webp",
+    "设计模式-命令模式/MLMS1.webp",
+    "设计模式-命令模式/Pasted image 20260718163628.png",
+    "设计模式-命令模式/Pasted image 20260718092833.png",
+    "设计模式-命令模式.md",
+    "视差映射优化—陡峭视差映射.md",
+    "设计模式-命令模式/Pasted image 20260717203957.png",
+    "2026-07-17.md",
+    "未命名.canvas",
+    "Unity游戏开发—基础框架概述.md",
+    "个人感悟-从学习到创造.md",
     "Unity开发-基础框架公共Mono类.md",
+    "Shader渲染基础光照模型—漫反射效果分析实现.md",
     "Unity游戏开发-基础设施单例基类.md",
     "Shader渲染基础光照模型—高光光照模型.md",
     "Shader渲染-菲涅尔效果实现解析.md",
     "Shader渲染—法线映射和视差映射.md",
-    "Unity游戏开发—基础框架概述.md",
     "知识体系搭建（博客目录）.md",
-    "个人感悟-从学习到创造.md",
     "Unity游戏开发—角色移动实战Character案例.md",
     "个人感悟-从学习到创造/XXCC.webp",
     "个人感悟-从学习到创造/Pasted image 20260622183336.png",
@@ -202,7 +212,6 @@
     "unity游戏开发-游戏角色控制.md",
     "Unity游戏开发-事件总线.md",
     "插值函数和陡峭插值映射.md",
-    "视差映射优化—陡峭视差映射.md",
     "Unity开发-基础框架公共Mono类",
     "Unity游戏开发-基础设施单例基类.md~",
     "Unity游戏开发-基础设施单例基类",
@@ -216,12 +225,7 @@
     "Unity游戏开发-事件总线/Pasted image 20260603213920.png",
     "Unity游戏开发-事件总线/GET.webp",
     "Unity游戏开发-事件总线/GET.png",
-    "Unity游戏开发-事件总线/Pasted image 20260603212435.png",
-    "Shader渲染基础光照模型—漫反射效果分析实现/MFS1.webp",
-    "Shader渲染基础光照模型—漫反射效果分析实现/MFS2.webp",
     "Unity游戏开发—角色移动实战Character案例",
-    "插值函数和陡峭插值映射/CZ1.webp",
-    "插值函数和陡峭插值映射/CZ.webp",
     "Pasted.md"
   ]
 }
