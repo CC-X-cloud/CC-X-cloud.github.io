@@ -4,6 +4,7 @@ date: 2026-07-22 23:53:14
 tags:
   - Unity开发
 categories: 编程
+cover: https://raw.githubusercontent.com/CC-X-cloud/CC-X-cloud.github.io/refs/heads/main/source/_data/covers/SJCM.webp
 ---
 # 前言
 这篇文章算是对单例模式在实际运用时的进一步探索和讲解，本文的目的是阐明具有单例模式的类的使用（一般是Manager）和一类与Manager看起来很像的类Controller，并对Controller和Manager的区别详细讲解，并提供多种解决单例模式耦合弊端的三种方法。
